@@ -5,12 +5,13 @@
     {
       "id": 1,
       "title": "Ticketing Komplain",
-      "description": "A full-stack complaint ticketing management system designed for streamlined issue tracking and resolution.",
+      "description": "A robust full-stack issue tracking system. Features streamlined complaint submission, real-time status updates, and a comprehensive admin dashboard for efficient resolution management.",
       "stack": [
         "Next.js",
         "TypeScript",
         "MongoDB",
-        "Mongoose"
+        "Mongoose",
+        "Tailwind CSS"
       ],
       "github": "https://github.com/RismaMerlinda/TicketingKomplain",
       "image": "assets/img/Ticketing.png"
@@ -18,11 +19,11 @@
     {
       "id": 2,
       "title": "Sekolah 3T",
-      "description": "Information system for transparent and verified fundraising for school infrastructure in 3T regions.",
+      "description": "A crowdfunding platform dedicated to empowering schools in 3T regions. Ensures transparent fundraising and verified infrastructure development using modern web technologies.",
       "stack": [
         "Next.js",
         "TypeScript",
-        "Tailwind",
+        "Tailwind CSS",
         "Vercel"
       ],
       "github": "https://github.com/RismaMerlinda/Sekolah3T",
@@ -31,7 +32,7 @@
     {
       "id": 3,
       "title": "Warmindo Telkom (Warkom)",
-      "description": "A management system for computer retail stores, handling inventory and sales efficiently.",
+      "description": "A comprehensive Point of Sale (POS) and inventory system for computer retail. Optimized to handle stock tracking, sales reporting, and business analytics seamlessly.",
       "stack": [
         "Laravel",
         "PHP",
@@ -45,12 +46,11 @@
     {
       "id": 4,
       "title": "Dayly",
-      "description": "A web-based date utility app to track dates, calculate age, and manage work schedules effectively.",
+      "description": "A productivity-focused utility suite for managing dates and schedules. Features precise age calculation, work day estimation, and event tracking in a modern interface.",
       "stack": [
         "Laravel",
-        "Tailwind",
         "JavaScript",
-        "Carbon"
+        "Tailwind CSS"
       ],
       "github": "https://github.com/RismaMerlinda/dayly",
       "image": "assets/img/dayly.png"
@@ -58,11 +58,12 @@
     {
       "id": 5,
       "title": "Cikal Tas",
-      "description": "Digital catalog development for Cikal Tas products, focusing on clean presentation and user experience.",
+      "description": "An elegant digital product catalog designed for Cikal Tas. Focuses on immersive user experience (UX) and visual storytelling to showcase products effectively.",
       "stack": [
-        "PHP",
         "Laravel",
-        "UI Design"
+        "PHP",
+        "MySQL",
+        "Bootstrap"
       ],
       "github": "https://github.com/RismaMerlinda/cikaltas",
       "demo": "https://cikaltas.my.id/login",
@@ -71,11 +72,11 @@
     {
       "id": 6,
       "title": "HydroSupport",
-      "description": "Mobile application designed to simplify the borrowing and support process for clean water distribution.",
+      "description": "A user-centric mobile solution developed to streamline access to clean water resources. Facilitates efficient support distribution for communities in need.",
       "stack": [
-        "Mobile UI",
         "Figma",
-        "Clean Layout",
+        "Mobile UI",
+        "Prototyping",
         "User Experience"
       ],
       "image": "assets/img/hydrosupport.png"
