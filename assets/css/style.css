@@ -1258,8 +1258,8 @@ img {
 }
 
 .project-image {
-    height: 180px;
-    /* Reduced height */
+    height: 210px;
+    /* Better proportion for mockups */
     background: #0d1117;
     position: relative;
     display: flex;
@@ -1272,15 +1272,15 @@ img {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    /* Show the full image without cropping/zooming */
-    object-position: center;
-    transition: all 0.4s ease;
+    object-fit: cover;
+    object-position: top;
+    /* This cuts off the bottom where logos usually are */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-image img {
-    transform: none;
-    /* Disabling zoom completely as requested */
+    transform: scale(1.1);
+    /* Subtle zoom for premium feel */
 }
 
 .placeholder-project {
