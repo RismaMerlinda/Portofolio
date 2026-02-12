@@ -1,0 +1,84 @@
+{
+  "contacts": [],
+  "visitors": [],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Ticketing Komplain",
+      "description": "A full-stack complaint ticketing management system designed for streamlined issue tracking and resolution.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose"
+      ],
+      "github": "https://github.com/RismaMerlinda/TicketingKomplain",
+      "image": "assets/img/Ticketing.png"
+    },
+    {
+      "id": 2,
+      "title": "Sekolah 3T",
+      "description": "Information system for transparent and verified fundraising for school infrastructure in 3T regions.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Vercel"
+      ],
+      "github": "https://github.com/RismaMerlinda/Sekolah3T",
+      "image": "assets/img/sekolah3t.png"
+    },
+    {
+      "id": 3,
+      "title": "Warmindo Telkom (Warkom)",
+      "description": "A management system for computer retail stores, handling inventory and sales efficiently.",
+      "stack": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Blade"
+      ],
+      "github": "https://github.com/RismaMerlinda/warkom",
+      "demo": "https://warkom.my.id/",
+      "image": "assets/img/warkom.png"
+    },
+    {
+      "id": 4,
+      "title": "Dayly",
+      "description": "A web-based date utility app to track dates, calculate age, and manage work schedules effectively.",
+      "stack": [
+        "Laravel",
+        "Tailwind",
+        "JavaScript",
+        "Carbon"
+      ],
+      "github": "https://github.com/RismaMerlinda/dayly",
+      "image": "assets/img/dayly.png"
+    },
+    {
+      "id": 5,
+      "title": "Cikal Tas",
+      "description": "Digital catalog development for Cikal Tas products, focusing on clean presentation and user experience.",
+      "stack": [
+        "PHP",
+        "Laravel",
+        "UI Design"
+      ],
+      "github": "https://github.com/RismaMerlinda/cikaltas",
+      "demo": "https://cikaltas.my.id/login",
+      "image": "assets/img/cikaltas.png"
+    },
+    {
+      "id": 6,
+      "title": "HydroSupport",
+      "description": "Mobile application designed to simplify the borrowing and support process for clean water distribution.",
+      "stack": [
+        "Mobile UI",
+        "Figma",
+        "Clean Layout",
+        "User Experience"
+      ],
+      "image": "assets/img/hydrosupport.png"
+    }
+  ]
+}

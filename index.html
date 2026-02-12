@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio Website showcasing my skills and projects">
+    <title>My Portfolio | Creative Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+</head>
+
+<body>
+
+    <!-- Particle Background -->
+    <div class="background-grid">
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="nav-pill">
+                <a href="#home" class="logo">Portofolio<span>.</span></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#publications" class="nav-link">Publications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <a href="assets/cv/cv%20risma%20merlinda.pdf" target="_blank" class="btn-cv"><i class="fa-solid fa-eye"></i>
+                View CV</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="container hero-content">
+                <div class="hero-info-card">
+                    <div class="hero-text">
+                        <h1 class="hero-name">Risma<br>Merlinda</h1>
+                        <h2 class="hero-role">Full Stack Developer</h2>
+
+                        <p class="hero-description">
+                            I build web applications that solve real problems. Focus on clean code, user experience,
+                            and delivering measurable business impact.
+                        </p>
+
+                        <div class="hero-location">
+                            <i class="fa-solid fa-location-dot"></i> Purwokerto, Indonesia
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View Projects <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="hero-social">
+                            <a href="https://github.com/RismaMerlinda" target="_blank" class="social-icon"
+                                aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rismamerlinda" target="_blank" class="social-icon"
+                                aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://instagram.com/rismrlnda_" target="_blank" class="social-icon"
+                                aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="mailto:rismamerlindaa@gmail.com" class="social-icon" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/6288221336427" target="_blank" class="social-icon"
+                                aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-frame">
+                        <div class="frame-glow"></div>
+                        <div class="profile-img-box">
+                            <img src="assets/img/RismaMerlinda.jpeg" alt="Risma Merlinda">
+                        </div>
+                    </div>
+
+                    <div class="tech-orb orb-1">
+                        <div class="orb-ring"></div>
+                        <div class="orb-core">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                    </div>
+                    <div class="tech-orb orb-2">
+                        <div class="orb-ring-reverse"></div>
+                        <div class="orb-core">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                    </div>
+
+                    <!-- Livelier Extras -->
+                    <div class="hero-orbit orbit-1"></div>
+                    <div class="hero-orbit orbit-2"></div>
+                    <div class="hero-orbit orbit-3"></div>
+
+                    <div class="floating-particle p-1"></div>
+                    <div class="floating-particle p-2"></div>
+                    <div class="floating-particle p-3"></div>
+                    <div class="floating-particle p-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title">About <span>Me</span></h2>
+
+                <p class="about-summary">
+                    I am an Information Systems student at <strong>Telkom University Purwokerto</strong> with a passion
+                    for
+                    building digital solutions that bridge <strong>UI/UX Design</strong> and <strong>Fullstack
+                        Development</strong>.
+                    I focus on transforming complex ideas into intuitive, reliable, and impactful applications that
+                    deliver
+                    meaningful user experiences.
+                </p>
+
+                <div class="about-grid">
+                    <!-- Tech Focus Card 1 -->
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Backend Dev</h3>
+                        <div class="pill-group">
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Next.js (API)</span>
+                            <span class="skill-pill">MongoDB</span>
+                            <span class="skill-pill">Mongoose</span>
+                            <span class="skill-pill">Laravel</span>
+                            <span class="skill-pill">PHP</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Focus Card 2 -->
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Frontend & UI</h3>
+                        <div class="pill-group">
+                            <span class="skill-pill">Next.js</span>
+                            <span class="skill-pill">React</span>
+                            <span class="skill-pill">TypeScript</span>
+                            <span class="skill-pill">Tailwind CSS</span>
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">UI Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Focus Card 3 -->
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Soft Skills</h3>
+                        <div class="pill-group">
+                            <span class="skill-pill">Leadership</span>
+                            <span class="skill-pill">Public Speaking</span>
+                            <span class="skill-pill">Writing</span>
+                            <span class="skill-pill">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Highlights Bar -->
+                <div class="experience-strip">
+                    <div class="exp-item">
+                        <span class="exp-date">Jan 2026 - Now</span>
+                        <h4>Diraya Tech</h4>
+                        <p>Full Stack Developer (Intern)</p>
+                    </div>
+                    <div class="exp-item">
+                        <span class="exp-date">Nov 2024 - Nov 2025</span>
+                        <h4>UKM Sentral Kerohanian Islam</h4>
+                        <p>Staf LSO Asistensi Agama Islam (AAI)</p>
+                    </div>
+                    <div class="exp-item">
+                        <span class="exp-date">Feb 2024 – Nov 2024</span>
+                        <h4>UKM Racana</h4>
+                        <p>Vice Chairman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section">
+            <div class="container">
+                <h2 class="section-title">Work & Organizational Experience</h2>
+                <div class="timeline">
+                    <!-- Work Experience 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content" style="border-left: 4px solid var(--primary-color);">
+                            <span class="timeline-date"
+                                style="color: var(--primary-color); background: rgba(56, 189, 248, 0.1);">Jan 2026 -
+                                Present</span>
+                            <h3>Full Stack Developer (Intern)</h3>
+                            <h4>Diraya Tech<span
+                                    style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary);">•
+                                    Purwokerto, Jawa Tengah</span></h4>
+                            <p>Contributing to the development of web-based applications by handling both frontend and
+                                backend components. Responsible for building user interfaces, developing RESTful APIs,
+                                managing databases, and integrating system features end-to-end. Actively involved in
+                                implementing role-based access, ensuring application reliability, and collaborating to
+                                deliver scalable and well-structured solutions.</p>
+                        </div>
+                    </div>
+                    <!-- Org 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                style="color: var(--primary-color); background: rgba(56, 189, 248, 0.1);">Nov 2024 - Nov
+                                2025</span>
+                            <h3>Staff LSO Asistensi Agama Islam</h3>
+                            <h4>UKM Sentral Kerohanian Islam - Telkom University Purwokerto</h4>
+                            <p>Mentor for Islamic Religious Assistance for Odd & Even Semesters. Served as treasurer for
+                                ±5 mentoring activities including Closing & Grand Opening Mentoring. Managed activity
+                                funds and prepared accurate accountability reports (LPJ).</p>
+                        </div>
+                    </div>
+                    <!-- Org 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date"
+                                style="color: var(--primary-color); background: rgba(56, 189, 248, 0.1);">Feb 2024 – Des
+                                2024</span>
+                            <h3>Vice Chairman</h3>
+                            <h4>UKM Racana - Telkom University Purwokerto</h4>
+                            <p>Assisted the chairman in decision making and strategic planning. Coordinated members
+                                across divisions to ensure collaboration. Ensured 5+ work programs were executed
+                                according to plan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section (Renamed from Skills) -->
+        <section id="tech-stack" class="skills section">
+            <div class="container">
+                <h2 class="section-title">Tech Stack & Tools</h2>
+                <div class="skills-grid">
+                    <!-- Next.js -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-n"></i>
+                        <h3>Next.js</h3>
+                        <p class="skill-type">Framework (React)</p>
+                    </div>
+                    <!-- TypeScript -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>TypeScript</h3>
+                        <p class="skill-type">Programming Language</p>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-node-js"></i>
+                        <h3>Node.js</h3>
+                        <p class="skill-type">Runtime Environment</p>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>MongoDB</h3>
+                        <p class="skill-type">NoSQL Database</p>
+                    </div>
+                    <!-- Laravel -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-laravel"></i>
+                        <h3>Laravel</h3>
+                        <p class="skill-type">PHP Framework</p>
+                    </div>
+                    <!-- PHP -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-php"></i>
+                        <h3>PHP</h3>
+                        <p class="skill-type">Programming Language</p>
+                    </div>
+                    <!-- Tailwind CSS -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <h3>Tailwind CSS</h3>
+                        <p class="skill-type">CSS Framework</p>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>MySQL</h3>
+                        <p class="skill-type">SQL Database</p>
+                    </div>
+                    <!-- Figma -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-figma"></i>
+                        <h3>Figma</h3>
+                        <p class="skill-type">UI/UX Design Tool</p>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>Git & GitHub</h3>
+                        <p class="skill-type">Version Control</p>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p class="skill-type">Core Language</p>
+                    </div>
+                    <!-- React -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-brands fa-react"></i>
+                        <h3>React</h3>
+                        <p class="skill-type">JS Library</p>
+                    </div>
+                    <!-- Vercel -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <h3>Vercel</h3>
+                        <p class="skill-type">Deployment</p>
+                    </div>
+                    <!-- Postman -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <h3>Postman</h3>
+                        <p class="skill-type">API Testing</p>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="skill-card glass-card">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <h3>VS Code</h3>
+                        <p class="skill-type">Code Editor</p>
+                    </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1: Ticketing Komplain -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <div class="overlay"></div>
+                            <div class="placeholder-project">Ticket System</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Ticketing Komplain</h3>
+                            <p>A full-stack complaint ticketing management system designed for streamlined issue
+                                tracking and resolution.</p>
+                            <div class="tech-stack">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>MongoDB</span>
+                                <span>Mongoose</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RismaMerlinda/TicketingKomplain" target="_blank"
+                                    class="btn-sm"><i class="fa-brands fa-github"></i>
+                                    Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Sekolah 3T -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <div class="overlay"></div>
+                            <div class="placeholder-project">Education Fund</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sekolah 3T</h3>
+                            <p>Information system for transparent and verified fundraising for school
+                                infrastructure in 3T regions.</p>
+                            <div class="tech-stack">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind</span>
+                                <span>Vercel</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RismaMerlinda/Sekolah3T" target="_blank" class="btn-sm"><i
+                                        class="fa-brands fa-github"></i>
+                                    Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: WarKom -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <div class="overlay"></div>
+                            <div class="placeholder-project">IT Shop Mgmt</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Warmindo Telkom (Warkom)</h3>
+                            <p>A management system for computer retail stores, handling inventory and sales
+                                efficiently.</p>
+                            <div class="tech-stack">
+                                <span>Laravel</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>Blade</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RismaMerlinda/warkom" target="_blank" class="btn-sm"><i
+                                        class="fa-brands fa-github"></i>
+                                    Code</a>
+                                <a href="https://warkom.my.id/" target="_blank" class="btn-sm btn-accent"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Dayly -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <div class="overlay"></div>
+                            <div class="placeholder-project">Date Utility</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Dayly</h3>
+                            <p>A web-based date utility app to track dates, calculate age, and manage work
+                                schedules effectively.</p>
+                            <div class="tech-stack">
+                                <span>Laravel</span>
+                                <span>Tailwind</span>
+                                <span>JavaScript</span>
+                                <span>Carbon</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RismaMerlinda/dayly" target="_blank" class="btn-sm"><i
+                                        class="fa-brands fa-github"></i>
+                                    Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Cikal Tas -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <div class="overlay"></div>
+                            <div class="placeholder-project">Product Catalog</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cikal Tas</h3>
+                            <p>Digital catalog development for Cikal Tas products, focusing on clean
+                                presentation and user experience.</p>
+                            <div class="tech-stack">
+                                <span>PHP</span>
+                                <span>Laravel</span>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RismaMerlinda/cikaltas" target="_blank" class="btn-sm"><i
+                                        class="fa-brands fa-github"></i>
+                                    Code</a>
+                                <a href="https://cikaltas.my.id/login" target="_blank" class="btn-sm btn-accent"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: HydroSupport (Mobile) -->
+                    <article class="project-card glass-card">
+                        <div class="project-image">
+                            <img src="assets/img/hydrosupport.png" alt="HydroSupport Mobile App">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>HydroSupport</h3>
+                            <p>Mobile application designed to simplify the borrowing and support process for clean water
+                                distribution.</p>
+                            <div class="tech-stack">
+                                <span>Mobile UI</span>
+                                <span>Figma</span>
+                                <span>Clean Layout</span>
+                                <span>User Experience</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="btn-sm"><i class="fa-solid fa-mobile-screen"></i> Mobile Concept</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="publications section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-grid">
+                    <a href="https://conferences.ittelkom-pwt.ac.id/index.php/centive/article/view/431" target="_blank"
+                        class="pub-card-link">
+                        <div class="pub-card">
+                            <div class="pub-icon"><i class="fa-solid fa-book-open"></i></div>
+                            <div class="pub-content">
+                                <h3>Systematic Literature Review: Penggunaan Sistem Pakar untuk Diagnosa Penyakit
+                                    Tanaman
+                                    Jagung</h3>
+                                <p class="pub-meta">Centive Telkom University Purwokerto • Dec 2024</p>
+                                <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:10px;">Analyzed
+                                    and
+                                    synthesized various scientific journals related to the application of expert systems
+                                    in
+                                    diagnosing corn plant diseases.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section - Ultra Premium Redesign -->
+        <section id="achievements" class="achievements section">
+            <div class="container">
+                <h2 class="section-title"><span>Achievements</span></h2>
+                <div class="achievement-grid-v2">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card-v2 glass-card">
+                        <div class="achievement-glow"></div>
+                        <div class="achievement-icon-box">
+                            <i class="fa-solid fa-trophy trophy-gold"></i>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag tag-gold">Finalist</span>
+                            <h3>PIMNAS 2025</h3>
+                            <p class="award-org">Kemendikbudristek RI</p>
+                            <p class="award-desc">Team Leader of PKM-K (Entrepreneurship). Led the development of
+                                "Petaloka" innovation from concept to national final.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card-v2 glass-card">
+                        <div class="achievement-glow"></div>
+                        <div class="achievement-icon-box">
+                            <i class="fa-solid fa-lightbulb trophy-cyan"></i>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag tag-cyan">Funding</span>
+                            <h3>PKM-K Funded 2025</h3>
+                            <p class="award-org">Kemendikbudristek RI</p>
+                            <p class="award-desc">Project Petaloka: Smart Bag for Scoliosis Prevention equipped with GPS
+                                tracking and Emergency Panic Button.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card-v2 glass-card">
+                        <div class="achievement-glow"></div>
+                        <div class="achievement-icon-box">
+                            <i class="fa-solid fa-pen-nib trophy-purple"></i>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag tag-purple">Top 5</span>
+                            <h3>National Essay 2024</h3>
+                            <p class="award-org">Universitas Padjadjaran & Universitas Pendidikan Indonesia</p>
+                            <p class="award-desc">Recognized for excellence in agronomy and education innovation in
+                                national academic competitions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-grid">
+                    <!-- Jan 2026 -->
+                    <a href="https://www.dicoding.com/certificates/QLZ96L9EMZ5D" target="_blank" class="cert-link">
+                        <div class="cert-card cert-dicoding">
+                            <i class="fa-solid fa-shield-halved cert-icon"></i>
+                            <h3>Introduction to Financial Literacy</h3>
+                            <p class="cert-meta">Dicoding Indonesia • Jan 2026</p>
+                            <p class="cert-desc">ID: QLZ96L9EMZ5D • Personal finance and planning basics.</p>
+                        </div>
+                    </a>
+
+                    <!-- Dec 2025 -->
+                    <a href="https://www.credly.com/badges/3e60b1e4-089e-4dec-8c8b-23d6db375107/linked_in_profile"
+                        target="_blank" class="cert-link">
+                        <div class="cert-card cert-aws">
+                            <i class="fa-brands fa-aws cert-icon"></i>
+                            <h3>AWS Academy Graduate - Cloud Foundations</h3>
+                            <p class="cert-meta">Amazon Web Services • Dec 2025</p>
+                            <p class="cert-desc">Cloud computing concepts, AWS services, and security basics.</p>
+                        </div>
+                    </a>
+
+                    <!-- Jan 2025 -->
+                    <div class="cert-card cert-odoo">
+                        <i class="fa-solid fa-certificate cert-icon"></i>
+                        <h3>Odoo Functional Certification</h3>
+                        <p class="cert-meta">Odoo S.A • Jan 2025</p>
+                        <p class="cert-desc">Business processes, module config, and ERP system usage.</p>
+                    </div>
+
+                    <!-- May 2024 -->
+                    <div class="cert-card">
+                        <i class="fa-solid fa-pen-nib cert-icon"></i>
+                        <h3>UI/UX Design Course</h3>
+                        <p class="cert-meta">MySkill • May 2024</p>
+                        <p class="cert-desc">Interface design principles, user flow, and wireframing.</p>
+                    </div>
+                </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Let's <span>Connect</span></h2>
+                <p class="section-subtitle">Got a vision or just want to say hi? Let's discuss your next project and
+                    build something amazing together!</p>
+
+                <div class="contact-ultra-wrapper">
+                    <!-- Glass Decorative Blobs -->
+                    <div class="contact-blob blob-cyan"></div>
+                    <div class="contact-blob blob-purple"></div>
+
+                    <div class="contact-wrapper unique-layout">
+                        <!-- Messaging Methods Grid -->
+                        <div class="contact-methods">
+                            <div class="method-card-grid">
+                                <a href="https://github.com/RismaMerlinda" target="_blank"
+                                    class="method-card glass-morph">
+                                    <div class="card-inner-glow"></div>
+                                    <i class="fa-brands fa-github"></i>
+                                    <h4>GitHub</h4>
+                                    <p>Check my repositories</p>
+                                </a>
+                                <a href="https://www.linkedin.com/in/rismamerlinda" target="_blank"
+                                    class="method-card glass-morph">
+                                    <div class="card-inner-glow"></div>
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                    <h4>LinkedIn</h4>
+                                    <p>Connect professionally</p>
+                                </a>
+                                <a href="mailto:rismamerlindaa@gmail.com" class="method-card glass-morph">
+                                    <div class="card-inner-glow"></div>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <h4>Email</h4>
+                                    <p>Direct message me</p>
+                                </a>
+                            </div>
+
+                            <div class="contact-status-box glass-morph">
+                                <div class="status-badge-modern">
+                                    <span class="status-pulse-dot"></span>
+                                    <span>Available for <strong>New Projects</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Premium Form Card -->
+                        <div class="form-card-premium glass-morph">
+                            <div class="form-premium-header">
+                                <div class="header-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                                <div class="header-text">
+                                    <h3>Quick Message</h3>
+                                    <p>Available for professional inquiries and collaborations.</p>
+                                </div>
+                            </div>
+                            <form id="contact-form">
+                                <div class="form-premium-grid">
+                                    <div class="input-premium-group">
+                                        <input type="text" id="name" name="name" required placeholder=" ">
+                                        <label>Your Name</label>
+                                        <div class="input-focus-bg"></div>
+                                    </div>
+                                    <div class="input-premium-group">
+                                        <input type="email" id="email" name="email" required placeholder=" ">
+                                        <label>Your Email</label>
+                                        <div class="input-focus-bg"></div>
+                                    </div>
+                                </div>
+                                <div class="input-premium-group full-width">
+                                    <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                                    <label>What can I help you with today?</label>
+                                    <div class="input-focus-bg"></div>
+                                </div>
+                                <button type="submit" class="btn btn-premium-wa-v2">
+                                    <div class="btn-content">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <span>Message on WhatsApp</span>
+                                    </div>
+                                    <div class="btn-v2-glow"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Risma Merlinda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
