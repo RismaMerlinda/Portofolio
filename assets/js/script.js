@@ -212,14 +212,15 @@ if (contactForm) {
                 console.log('Backend logging skipped (server not found)');
             }
 
-            // WhatsApp Redirect
-            const phone = "6288221336427";
-            const waText = `Halo Risma, saya ${name} (${email}).\n\n${message}`;
-            const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(waText)}`;
+            // Email Redirect
+            const myEmail = "rismamerlindaa@gmail.com";
+            const subject = `Inquiry from ${name}`;
+            const body = `Halo Risma,\n\nSaya ${name} (${email}).\n\n${message}`;
+            const mailtoUrl = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            window.open(waUrl, '_blank');
+            window.location.href = mailtoUrl;
 
-            alert(`Pesan kamu sudah disiapkan di WhatsApp!`);
+            alert(`Pesan kamu sudah disiapkan di Email!`);
             contactForm.reset();
             btn.innerHTML = originalText;
             btn.disabled = false;
