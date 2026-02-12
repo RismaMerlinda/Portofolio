@@ -1274,15 +1274,23 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    /* Ensure it stays centered */
     transform: scale(1.3);
-    /* Pre-zoom to hide edges/watermarks */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover .project-image img {
+/* Override for images without watermarks */
+.project-image img.no-zoom {
+    transform: scale(1);
+    object-fit: contain;
+    background: #0d1117;
+}
+
+.project-card:hover .project-image img:not(.no-zoom) {
     transform: scale(1.4);
-    /* Zoom further on hover */
+}
+
+.project-card:hover .project-image img.no-zoom {
+    transform: scale(1.05);
 }
 
 .placeholder-project {
