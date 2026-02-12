@@ -80,6 +80,19 @@
         "User Experience"
       ],
       "image": "assets/img/hydrosupport.png"
+    },
+    {
+      "id": 7,
+      "title": "Sales Tracking System",
+      "description": "A sophisticated dashboard design for real-time sales monitoring and analytics. Focuses on data visualization and intuitive user flow to enhance business performance tracking.",
+      "stack": [
+        "Figma",
+        "UI/UX Design",
+        "Dashboard Design",
+        "Data Visualization"
+      ],
+      "demo": "https://www.figma.com/design/32RpjKjjUtyoG88GSXlsRJ/Sales-Tracking-System?node-id=2014-378&t=Dd3XhbwVuS5lxwiN-1",
+      "image": "assets/img/sales.png"
     }
   ]
 }
