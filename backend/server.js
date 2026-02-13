@@ -21,6 +21,8 @@ app.use(bodyParser.json());
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portofolio';
 
+// Check if we are in Vercel environment (optional, but good for connection management)
+// Vercel serverless functions might reuse DB connection if we cache it, but Mongoose handles it reasonably well.
 mongoose.connect(MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB: portofolio');
@@ -37,7 +39,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Seeding logic (one-time if empty)
+// Seeding logic
 async function seedDatabase() {
     try {
         const projectCount = await Project.countDocuments();
@@ -62,7 +64,12 @@ async function seedDatabase() {
     }
 }
 
-// 1. Visit Log - Track who opens the site
+// Routes
+app.get('/', (req, res) => {
+    res.send('Portfolio Backend is Running');
+});
+
+// 1. Visit Log
 app.post('/api/visit', async (req, res) => {
     try {
         const newVisit = new Visitor({
@@ -76,7 +83,7 @@ app.post('/api/visit', async (req, res) => {
     }
 });
 
-// 2. Contact Form - Save messages & Auto-email
+// 2. Contact Form
 app.post('/api/contact', async (req, res) => {
     const { name, email, message } = req.body;
     if (!name || !email || !message) {
@@ -84,12 +91,10 @@ app.post('/api/contact', async (req, res) => {
     }
 
     try {
-        // 1. Save to Database
         const newMessage = new Contact({ name, email, message });
         await newMessage.save();
 
         let emailSent = false;
-        // 2. Auto Email (Only if credentials provided and valid)
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS && !process.env.EMAIL_USER.includes('your-email')) {
             try {
                 const mailOptions = {
@@ -98,7 +103,6 @@ app.post('/api/contact', async (req, res) => {
                     subject: `New Inquiry from ${name}`,
                     text: `You have a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
                 };
-
                 await transporter.sendMail(mailOptions);
                 console.log('Email sent successfully');
                 emailSent = true;
@@ -118,7 +122,7 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-// 3. Projects list - GET all projects (Dynamic)
+// 3. Projects
 app.get('/api/projects', async (req, res) => {
     try {
         const projects = await Project.find();
@@ -128,7 +132,6 @@ app.get('/api/projects', async (req, res) => {
     }
 });
 
-// Admin Route to view messages
 app.get('/api/admin/messages', async (req, res) => {
     try {
         const messages = await Contact.find().sort({ date: -1 });
@@ -138,7 +141,15 @@ app.get('/api/admin/messages', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Backend running at http://localhost:${PORT}`);
-});
+// Export the app for Vercel
+module.exports = app;
+
+// Listen only if running directly
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Backend running at http://localhost:${PORT}`);
+    });
+}
+
+
 
