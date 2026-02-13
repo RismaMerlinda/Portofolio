@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const Project = require('./models/Project');
@@ -26,6 +27,15 @@ mongoose.connect(MONGODB_URI)
         seedDatabase();
     })
     .catch(err => console.error('Could not connect to MongoDB:', err));
+
+// Nodemailer Config
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
 
 // Seeding logic (one-time if empty)
 async function seedDatabase() {
@@ -66,7 +76,7 @@ app.post('/api/visit', async (req, res) => {
     }
 });
 
-// 2. Contact Form - Save messages
+// 2. Contact Form - Save messages & Auto-email
 app.post('/api/contact', async (req, res) => {
     const { name, email, message } = req.body;
     if (!name || !email || !message) {
@@ -74,11 +84,30 @@ app.post('/api/contact', async (req, res) => {
     }
 
     try {
+        // 1. Save to Database
         const newMessage = new Contact({ name, email, message });
         await newMessage.save();
-        res.status(201).json({ message: 'Message saved successfully', data: newMessage });
+
+        // 2. Auto Email (Only if credentials provided)
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: 'rismamerlindaa@gmail.com',
+                subject: `New Inquiry from ${name}`,
+                text: `You have a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+            };
+
+            await transporter.sendMail(mailOptions);
+            console.log('Email sent successfully');
+        }
+
+        res.status(201).json({
+            message: 'Message saved and email sent successfully',
+            data: newMessage
+        });
     } catch (err) {
-        res.status(500).json({ error: 'Failed to save message' });
+        console.error('Error in /api/contact:', err);
+        res.status(500).json({ error: 'Failed to process message' });
     }
 });
 
@@ -105,3 +134,4 @@ app.get('/api/admin/messages', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Backend running at http://localhost:${PORT}`);
 });
+

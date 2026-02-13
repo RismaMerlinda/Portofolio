@@ -199,34 +199,43 @@ if (contactForm) {
         if (name && email && message) {
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerHTML;
-            btn.innerText = 'Sending...';
+            btn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin"></i> Sending...</span>';
             btn.disabled = true;
 
+            let backendSuccess = false;
             try {
-                await fetch(`${API_URL}/contact`, {
+                const response = await fetch(`${API_URL}/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, message })
                 });
+
+                if (response.ok) {
+                    backendSuccess = true;
+                    alert(`Terima kasih ${name}, pesan kamu sudah tersimpan dan terkirim otomatis!`);
+                    contactForm.reset();
+                }
             } catch (err) {
-                console.log('Backend logging skipped (server not found)');
+                console.warn('Backend unavailable, falling back to mailto');
             }
 
-            // Email Redirect
-            const myEmail = "rismamerlindaa@gmail.com";
-            const subject = `Inquiry from ${name}`;
-            const body = `Halo Risma,\n\nSaya ${name} (${email}).\n\n${message}`;
-            const mailtoUrl = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            // Fallback to mailto if backend failed or for extra assurance
+            if (!backendSuccess) {
+                const myEmail = "rismamerlindaa@gmail.com";
+                const subject = `Inquiry from ${name}`;
+                const body = `Halo Risma,\n\nSaya ${name} (${email}).\n\n${message}`;
+                const mailtoUrl = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            window.location.href = mailtoUrl;
+                window.location.href = mailtoUrl;
+                alert(`Membuka aplikasi email untuk mengirim pesan...`);
+            }
 
-            alert(`Pesan kamu sudah disiapkan di Email!`);
-            contactForm.reset();
             btn.innerHTML = originalText;
             btn.disabled = false;
         }
     });
 }
+
 
 // 6. Typing Animation
 const typingText = document.querySelector('.typing-text');
