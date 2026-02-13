@@ -203,6 +203,8 @@ if (contactForm) {
             btn.disabled = true;
 
             let backendSuccess = false;
+            let emailSent = false;
+
             try {
                 const response = await fetch(`${API_URL}/contact`, {
                     method: 'POST',
@@ -211,23 +213,29 @@ if (contactForm) {
                 });
 
                 if (response.ok) {
+                    const result = await response.json();
                     backendSuccess = true;
-                    alert(`Terima kasih ${name}, pesan kamu sudah tersimpan dan terkirim otomatis!`);
+                    emailSent = result.emailSent;
+
+                    if (emailSent) {
+                        alert(`Terima kasih ${name}, pesan kamu sudah tersimpan dan email notifikasi berhasil dikirim!`);
+                    } else {
+                        alert(`Terima kasih ${name}, pesan sudah tersimpan di database. Sistem akan mengalihkan ke email untuk pengiriman manual.`);
+                    }
                     contactForm.reset();
                 }
             } catch (err) {
                 console.warn('Backend unavailable, falling back to mailto');
             }
 
-            // Fallback to mailto if backend failed or for extra assurance
-            if (!backendSuccess) {
+            // Fallback to mailto if (backend failed completely) OR (backend saved but email failed)
+            if (!backendSuccess || (backendSuccess && !emailSent)) {
                 const myEmail = "rismamerlindaa@gmail.com";
                 const subject = `Inquiry from ${name}`;
                 const body = `Halo Risma,\n\nSaya ${name} (${email}).\n\n${message}`;
                 const mailtoUrl = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
                 window.location.href = mailtoUrl;
-                alert(`Membuka aplikasi email untuk mengirim pesan...`);
             }
 
             btn.innerHTML = originalText;

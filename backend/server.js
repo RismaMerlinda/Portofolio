@@ -88,22 +88,29 @@ app.post('/api/contact', async (req, res) => {
         const newMessage = new Contact({ name, email, message });
         await newMessage.save();
 
-        // 2. Auto Email (Only if credentials provided)
-        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-            const mailOptions = {
-                from: process.env.EMAIL_USER,
-                to: 'rismamerlindaa@gmail.com',
-                subject: `New Inquiry from ${name}`,
-                text: `You have a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
-            };
+        let emailSent = false;
+        // 2. Auto Email (Only if credentials provided and valid)
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS && !process.env.EMAIL_USER.includes('your-email')) {
+            try {
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: 'rismamerlindaa@gmail.com',
+                    subject: `New Inquiry from ${name}`,
+                    text: `You have a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+                };
 
-            await transporter.sendMail(mailOptions);
-            console.log('Email sent successfully');
+                await transporter.sendMail(mailOptions);
+                console.log('Email sent successfully');
+                emailSent = true;
+            } catch (emailErr) {
+                console.warn('Email send failed but message saved:', emailErr);
+            }
         }
 
         res.status(201).json({
-            message: 'Message saved and email sent successfully',
-            data: newMessage
+            message: 'Message saved successfully',
+            data: newMessage,
+            emailSent: emailSent
         });
     } catch (err) {
         console.error('Error in /api/contact:', err);
